@@ -1,0 +1,26 @@
+name: Docker Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+      
+    - name: Build Docker image
+      run: docker buildx build -t your-windows:latest .
+      
+    - name: Log in to Docker Hub
+      run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ronin1555144 --password-stdin
+      
+    - name: Push Docker image to Docker Hub
+      run: docker push your-windows:latest
