@@ -1,5 +1,5 @@
 # Use the Windows Server Core image as the base image
-FROM mcr.microsoft.com/windows/servercore:ltsc2019
+FROM mcr.microsoft.com/windows/server:ltsc2022
 
 # Set the working directory
 WORKDIR C:\Dockerfile
