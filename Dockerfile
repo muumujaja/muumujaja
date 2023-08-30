@@ -1,5 +1,5 @@
-# Use an official Windows Server Core as a base image
-FROM mcr.microsoft.com/windows/servercore:ltsc2022
+# Use the Windows Server Core image as the base image
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
 
 # Set the working directory
 WORKDIR C:\app
@@ -7,6 +7,5 @@ WORKDIR C:\app
 # Copy your application files to the container
 COPY . .
 
-# Specify the command to run when the container starts
-CMD ["cmd", "/k"]
-title: "Added Dockerfile"
+# Run your application
+CMD ["cmd", "/c", "echo Hello from Windows Docker!"]
