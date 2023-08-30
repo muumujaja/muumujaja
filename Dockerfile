@@ -2,7 +2,7 @@
 FROM mcr.microsoft.com/windows/servercore:ltsc2019
 
 # Set the working directory
-WORKDIR C:\app
+WORKDIR C:\Dockerfile
 
 # Copy your application files to the container
 COPY . .
